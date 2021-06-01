@@ -26,9 +26,11 @@ newArr.push(item)
 let reformattedArr = newArr.join().split(',---,');
 let finalArr = [];
 var separators = [' ', ',']
-const finalFormat = reformattedArr.forEach(item => {
+
+reformattedArr.forEach(item => {
     finalArr.push(item.split(new RegExp(separators.join('|'), 'g')) )
 })
+
 
 console.log(finalArr)
 
