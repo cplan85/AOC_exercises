@@ -19,7 +19,7 @@ const nums = [
 
 nums.sort((a, b) => a - b);
 
-const findTarget = (target, l = 0, r = nums.length - 1) => {
+const findTarget = (target: number, l = 0, r = nums.length - 1) => {
   const num1 = nums[l];
   const num2 = nums[r];
   const sum = num1 + num2;
@@ -27,14 +27,16 @@ const findTarget = (target, l = 0, r = nums.length - 1) => {
   return l >= r
     ? -1
     : sum === target
-    ? num1 * num2 
+    ? num1 * num2
     : sum < target
     ? findTarget(target, l + 1, r)
     : findTarget(target, l, r - 1);
 };
 
+let sum3 = nums.filter((num) => {
+  const product = findTarget(2020 - num);
+  if (product > -1) return num
+})
 
-nums.forEach(num => {
-    const product = findTarget(2020 - num);
-    if (product > -1) console.log(num)
-        })
+const result = sum3.reduce((product, num) => product * num, 1);
+console.log(result)

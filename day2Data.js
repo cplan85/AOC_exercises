@@ -1,4 +1,6 @@
-
+"use strict";
+exports.__esModule = true;
+exports.textInput = void 0;
 const textInput = `8-9 x: xxxxxxxrk
 5-8 f: fxffmfff
 2-5 c: ccspwpc
@@ -1000,4 +1002,4 @@ const textInput = `8-9 x: xxxxxxxrk
 1-7 c: ccrmhdchwbr
 7-11 g: xzgnggggrggrg`
 
-export {textInput };
+exports.textInput = textInput;
