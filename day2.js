@@ -1,11 +1,17 @@
 "use strict";
 exports.__esModule = true;
 var day2Data_1 = require("./day2Data");
+var list = ["1-3 a: abcde",
+    "1-3 b: cdefg",
+    "2-9 c: ccccccccc",];
+var pattern = /(\d+)-(\d+) (\w): (\S+)/;
+console.log("reg check", list.map(function (pw) {
+    pw.match(pattern);
+}));
 var correctPasswordCount = function (input) {
     var splitted = input.split("\n");
     var arr = [];
     var count = 0;
-    //create an array of arrays with 2 items - 1st is the criteria; 2nd is the actual password
     splitted.forEach(function (item) {
         arr.push(item.split(":"));
     });

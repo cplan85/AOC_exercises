@@ -15,11 +15,6 @@ reformattedArr.forEach(function (item) {
     finalArr.push(item.split(new RegExp(separators.join('|'), 'g')));
 });
 console.log(finalArr);
-var part2Array = [];
-finalArr.forEach(function (item, index) {
-    part2Array.push(item[index].split(":"));
-});
-console.log(part2Array);
 var count = 0;
 finalArr.forEach(function (item, index) {
     item.length === 8 ? count++ : item.length === 7 ? item.join().includes('cid:') ? null : count++ : null;

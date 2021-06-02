@@ -1,10 +1,20 @@
 import { textInput } from "./day2Data";
 
+var list = 
+ [ "1-3 a: abcde",
+"1-3 b: cdefg",
+"2-9 c: ccccccccc",]
+
+const pattern = /(\d+)-(\d+) (\w): (\S+)/
+
+console.log(`reg check`, list.map((pw)=> {
+  pw.match(pattern)
+}) )
+
 var correctPasswordCount = function (input: string) {
   let splitted = input.split("\n");
   let arr = [];
   let count = 0;
-  //create an array of arrays with 2 items - 1st is the criteria; 2nd is the actual password
   splitted.forEach((item) => {
     arr.push(item.split(":"));
   });

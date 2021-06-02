@@ -32,6 +32,5 @@ var threeSum = function (arr, sum) {
             }
         }
     }
-    // If we reach here, then no triplet was found
 };
 threeSum(arr, 2020);
