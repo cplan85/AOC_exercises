@@ -66,18 +66,11 @@ var validityCheck = function (obj) {
     };
     return Object.values(results).every(function (bool) { return bool; });
 };
+var part1PassportCheck = finalObj.filter(function (obj) {
+    return completenessCheck(obj);
+});
 var part2PassportCheck = finalObj.filter(function (obj) {
     return completenessCheck(obj) && validityCheck(obj);
 });
-var count = 0;
-finalArr.forEach(function (item, index) {
-    item.length === 8
-        ? count++
-        : item.length === 7
-            ? item.join().includes("cid:")
-                ? null
-                : count++
-            : null;
-});
-console.log("Part 1: Number of Valid Passports =>", count);
+console.log("Part 1: Number of Valid Passports =>", part1PassportCheck.length);
 console.log("Part 2: Number of Valid Passports =>", part2PassportCheck.length);

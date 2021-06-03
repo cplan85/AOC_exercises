@@ -12,3 +12,7 @@ Day 2:
 Day 3:
 - Part 1: In a field of trees(#) and open spaces (.) that repeats horizontally, figure out the number of times that a user encounters trees when moving down 1 and right 3 within the field.
 - Part 2: In a field of trees(#) and open spaces (.) that repeats horizontally, figure out the number of times that a user encounters trees when moving down 1 and right 1, down 1 and right 3, down 1 and right 5, down 1 and right 7, down 2 and right 1 within the field. Then multiply all the values together.
+
+Day 4:
+- Part 1: In a field of trees(#) and open spaces (.) that repeats horizontally, figure out the number of times that a user encounters trees when moving down 1 and right 3 within the field.
+- Part 2: In a field of trees(#) and open spaces (.) that repeats horizontally, figure out the number of times that a user encounters trees when moving down 1 and right 1, down 1 and right 3, down 1 and right 5, down 1 and right 7, down 2 and right 1 within the field. Then multiply all the values together.

@@ -90,21 +90,15 @@ const validityCheck = (obj) => {
   };
   return Object.values(results).every((bool) => bool);
 };
+const part1PassportCheck = finalObj.filter((obj: object) => {
+  return completenessCheck(obj)
+});
 
 const part2PassportCheck = finalObj.filter((obj: object) => {
   return completenessCheck(obj) && validityCheck(obj);
 });
-let count = 0;
-finalArr.forEach((item, index) => {
-  item.length === 8
-    ? count++
-    : item.length === 7
-    ? item.join().includes("cid:")
-      ? null
-      : count++
-    : null;
-});
 
-console.log(`Part 1: Number of Valid Passports =>`, count);
+
+console.log(`Part 1: Number of Valid Passports =>`, part1PassportCheck.length);
 
 console.log(`Part 2: Number of Valid Passports =>`, part2PassportCheck.length);
