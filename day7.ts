@@ -14,11 +14,38 @@ const input = testData;
 
 let splitted = input.split("\n");
 
-var separators = [" ", ","];
+var keys = [];
+
+let obj = {};
 
 const newBrackets = splitted.map(str => {
-  //return str.split(' contain ')
-  return normalizeWS(str)
+  
+  let splitVals = normalizeWS(str).split('s contain ')
+  keys.push(splitVals[0])
+  obj[splitVals[0]] = splitVals[1].replace(/[0-9]\s/g, '').replace(/s[\.]/g, '')
+  //.split(',');
+  return obj;
+})
+let matches = []
+const replaceVals = newBrackets.map(entry => {
+ 
+  keys.forEach(key => {
+   
+    //console.log(`Entry Values`, Object.values(entry)[0])
+    let val: any = Object.values(entry)[0]
+  
+    if (val.includes(key)) {
+      let ref: any = newBrackets[0];
+      console.log(`val`,val)
+      console.log(`match entry`,ref[key])
+      console.log('key', key)
+  
+     // matches.push(val)
+      val.replace(key, ref[key])
+       console.log(`replaced values`, val)
+    }
+  })
+  return entry
 })
 
 function normalizeWS(str) {
@@ -26,5 +53,6 @@ function normalizeWS(str) {
   return str ? str.join(' ') : '';
 }
 
-console.log(newBrackets)
+//console.log(newBrackets)
+console.log(replaceVals)
 
