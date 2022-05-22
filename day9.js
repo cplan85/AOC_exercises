@@ -1,3 +1,6 @@
+var day9Data_1 = require("./day9Data");
+var input = day9Data_1.textInput;
+
 const testData = `35
 20
 15
@@ -19,9 +22,12 @@ const testData = `35
 309
 576`;
 
-var NumbersArr = testData.split("\n").map((item) => {
+var NumbersArr = input.split("\n").map((item) => {
   return parseInt(item);
 });
+
+const testPreamble = 5;
+const preamble = 25;
 
 const twoSum = (arr, S) => {
   var sums = [];
@@ -47,16 +53,16 @@ const twoSum = (arr, S) => {
 };
 
 const result = NumbersArr.find((number, idx, numbers) => {
-  if (idx < 5) {
+  if (idx < preamble) {
     return false;
   }
-  const previousNumbers = numbers.slice(idx - 5, idx);
-  console.log("Prevous numbers", previousNumbers);
-  for (const number of NumbersArr) {
-    return twoSum(previousNumbers, number);
+  const previousNumbers = numbers.slice(idx - preamble, idx);
+
+  if (twoSum(previousNumbers, number).length > 0) {
+    return false;
+  } else if (twoSum(previousNumbers, number).length == 0) {
+    return number;
   }
 });
 
 console.log(result);
-
-//console.log(NumbersArr);
